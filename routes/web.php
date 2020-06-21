@@ -167,4 +167,28 @@ Route::get('/country/hmt', function () {
     }
 });
 
+//polymorphism relationships
+Route::get('/user/photos', function () {
+    $user = \App\User::find(1);
+    foreach ($user->photos as $photo){
+        return $photo->path;
+    }
+});
+
+//polymorphism relationships
+Route::get('/user/photos', function () {
+    $user = \App\User::find(1);
+    foreach ($user->photos as $photo){
+        return $photo->path;
+    }
+});
+
+//polymorphism relationships
+Route::get('/post/photos', function () {
+    $post = \App\Post::find(1);
+    foreach ($post->photos as $photo){
+        return $photo->path;
+    }
+});
+
 
