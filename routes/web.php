@@ -119,3 +119,11 @@ Route::get('/user/{id}/post', function ($id) {
 
     return User::find($id)->post;
 });
+
+
+//Inverse 1 to 1 relationships
+
+Route::get('/post/{id}/user', function ($id) {
+
+    return \App\Post::find($id)->user;
+});
