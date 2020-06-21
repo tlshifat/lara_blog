@@ -84,3 +84,10 @@ Route::get('/destroyorm', function () {
 
     return \App\Post::destroy([3]);
 });
+
+Route::get('/softorm', function () {
+
+
+    return \App\Post::destroy([4]);
+});
+
