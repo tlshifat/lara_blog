@@ -71,3 +71,16 @@ Route::get('/updateorm', function () {
 
     return \App\Post::where('id',2)->update(array('title'=>'updated right now'));
 });
+
+
+Route::get('/deleteorm', function () {
+
+
+    return \App\Post::where('id',2)->delete();
+});
+
+Route::get('/destroyorm', function () {
+
+
+    return \App\Post::destroy([3]);
+});
