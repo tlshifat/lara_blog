@@ -159,3 +159,12 @@ Route::get('/role/pivot', function () {
     }
 });
 
+//has many through relationships
+Route::get('/country/hmt', function () {
+    $countries = \App\Country::find(1);
+    foreach ($countries->posts as $post){
+        return $post->title;
+    }
+});
+
+
