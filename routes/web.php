@@ -191,4 +191,10 @@ Route::get('/post/photos', function () {
     }
 });
 
+//polymorphism relationships inverse
+Route::get('/photos/{id}', function ($id) {
+    $photo = \App\Photo::find($id);
+    return $photo->imageable;
+});
+
 
