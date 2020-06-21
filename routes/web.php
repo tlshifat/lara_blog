@@ -127,3 +127,24 @@ Route::get('/post/{id}/user', function ($id) {
 
     return \App\Post::find($id)->user;
 });
+
+//Inverse 1 to many relationships
+
+Route::get('/user/{id}/post', function ($id) {
+
+    return User::find($id)->posts;
+});
+
+//many to many relationships
+
+Route::get('/user/{id}/role', function ($id) {
+
+    return User::find($id)->roles;
+});
+
+//many to many relationships
+
+Route::get('/role/{id}/user', function ($id) {
+
+    return \App\Role::find($id)->users;
+});
