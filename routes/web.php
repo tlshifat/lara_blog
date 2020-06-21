@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -113,3 +114,8 @@ Route::get('/forcedelete', function () {
 });
 
 
+//Relation ships
+Route::get('/user/{id}/post', function ($id) {
+
+    return User::find($id)->post;
+});
