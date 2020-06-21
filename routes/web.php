@@ -91,3 +91,12 @@ Route::get('/softorm', function () {
     return \App\Post::destroy([4]);
 });
 
+Route::get('/retrievesoftorm', function () {
+
+
+    return \App\Post::onlyTrashed()->get();
+});
+
+
+
+
