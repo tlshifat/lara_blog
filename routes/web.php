@@ -197,4 +197,25 @@ Route::get('/photos/{id}', function ($id) {
     return $photo->imageable;
 });
 
+//polymorphism relationships many to many
+Route::get('/tags/{id}', function ($id) {
+    $tag = \App\Tag::find($id);
+    return $tag->videos;
+});
+
+//polymorphism relationships many to many
+Route::get('/videos/{id}', function ($id) {
+    $video = \App\Video::find($id);
+    return $video->tags;
+});
+
+//polymorphism relationships many to many
+Route::get('/post/tag', function () {
+    $video = \App\Post::find(1);
+    return $video->tags;
+});
+
+
+
+
 
