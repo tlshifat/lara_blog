@@ -100,3 +100,10 @@ Route::get('/retrievesoftorm', function () {
 
 
 
+Route::get('/restoreorm', function () {
+
+
+    return \App\Post::onlyTrashed()->restore();
+});
+
+
