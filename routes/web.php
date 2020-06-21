@@ -148,3 +148,14 @@ Route::get('/role/{id}/user', function ($id) {
 
     return \App\Role::find($id)->users;
 });
+
+
+//Querying relationships
+
+Route::get('/role/pivot', function () {
+    $roles = \App\Role::find(1);
+    foreach ($roles->users as $user){
+        return $user->pivot;
+    }
+});
+
