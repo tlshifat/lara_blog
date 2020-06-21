@@ -82,7 +82,7 @@ Route::get('/deleteorm', function () {
 Route::get('/destroyorm', function () {
 
 
-    return \App\Post::destroy([3]);
+    return \App\Post::destroy([4]);
 });
 
 Route::get('/softorm', function () {
@@ -104,6 +104,12 @@ Route::get('/restoreorm', function () {
 
 
     return \App\Post::onlyTrashed()->restore();
+});
+
+Route::get('/forcedelete', function () {
+
+
+    return \App\Post::onlyTrashed()->forceDelete();
 });
 
 
